@@ -9,6 +9,7 @@ export default function App() {
   const handleAddToDo = () => {
     if (toDo) {
       setTodos((prevTodos) => [...prevTodos, toDo]);
+      setToDo("");
     }
   };
 
@@ -22,7 +23,9 @@ export default function App() {
         }}
       >
         <TextField {...{ toDo, setToDo }} />
-        <button type="submit">Agregar</button>
+        <button type="submit" disabled={!toDo}>
+          Agregar
+        </button>
       </form>
       <ul>
         {todos.map((toDo, index) => {
