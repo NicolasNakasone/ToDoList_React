@@ -1,8 +1,9 @@
 import { FormEvent, SetStateAction, useState } from "react";
 import TextField from "./ToDoInput";
+import { ToDo } from "../App";
 
 interface ToDoFormProps {
-  setTodos: (value: SetStateAction<string[]>) => void;
+  setTodos: (value: SetStateAction<ToDo[]>) => void;
 }
 
 export default function ToDoForm({ setTodos }: ToDoFormProps) {
@@ -12,7 +13,10 @@ export default function ToDoForm({ setTodos }: ToDoFormProps) {
     e.preventDefault();
 
     if (toDo) {
-      setTodos((prevTodos) => [...prevTodos, toDo]);
+      setTodos((prevTodos) => [
+        ...prevTodos,
+        { id: new Date().getTime(), task: toDo },
+      ]);
       setToDo("");
     }
   };
