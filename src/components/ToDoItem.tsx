@@ -11,10 +11,27 @@ export default function ToDoItem({ toDo, setTodos }: ToDoItemProps) {
     setTodos((prevToDos) => prevToDos.filter((toDo) => toDo.id !== id));
   };
 
+  const handleCompleteToDo = (id: number) => {
+    setTodos((prevToDos) =>
+      prevToDos.map((toDo) => ({
+        ...toDo,
+        isCompleted: toDo.id === id ? !toDo.isCompleted : toDo.isCompleted,
+      }))
+    );
+  };
+
   return (
-    <li>
+    <li
+      className={toDo.isCompleted ? "completed" : ""}
+      onClick={() => handleCompleteToDo(toDo.id)}
+    >
       {toDo.task}
-      <button onClick={() => handleRemoveToDo(toDo.id)}>❌</button>
+      <button
+        className="remove_button"
+        onClick={() => handleRemoveToDo(toDo.id)}
+      >
+        ❌
+      </button>
     </li>
   );
 }
