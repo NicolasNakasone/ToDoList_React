@@ -9,7 +9,7 @@ interface ToDoListProps {
 
 export default function ToDoList({ todos, setTodos }: ToDoListProps) {
   return (
-    <ul>
+    <ul className="todo_list">
       {todos.map((toDo) => {
         return <ToDoItem key={toDo.id} {...{ toDo, setTodos }} />;
       })}
