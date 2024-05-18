@@ -6,6 +6,7 @@ import ToDoList from "./components/ToDoList";
 export interface ToDo {
   id: number;
   task: string;
+  isCompleted: boolean;
 }
 
 export default function App() {

@@ -15,7 +15,7 @@ export default function ToDoForm({ setTodos }: ToDoFormProps) {
     if (toDo) {
       setTodos((prevTodos) => [
         ...prevTodos,
-        { id: new Date().getTime(), task: toDo },
+        { id: new Date().getTime(), task: toDo, isCompleted: false },
       ]);
       setToDo("");
     }
