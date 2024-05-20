@@ -21,11 +21,8 @@ export default function ToDoItem({ toDo, setTodos }: ToDoItemProps) {
   };
 
   return (
-    <li
-      className={toDo.isCompleted ? "completed" : ""}
-      onClick={() => handleCompleteToDo(toDo.id)}
-    >
-      {toDo.task}
+    <li onClick={() => handleCompleteToDo(toDo.id)}>
+      <span className={toDo.isCompleted ? "completed" : ""}>{toDo.task}</span>
       <button
         className="remove_button"
         onClick={() => handleRemoveToDo(toDo.id)}
