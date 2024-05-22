@@ -38,7 +38,11 @@ h1 {
   gap: 1rem;
   
   & > span {
-    line-break: anywhere;
+    /* Revisar luego si esta prop no traera otros problemas
+      Aunque por lo que note, visualmente pareciera funcionar
+      igual que word-break: break-all;
+    */
+    /* line-break: anywhere; */
     overflow: auto;
   }
   
