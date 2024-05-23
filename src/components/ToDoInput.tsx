@@ -8,6 +8,7 @@ interface ToDoInputProps {
 export default function ToDoInput({ toDo, setToDo }: ToDoInputProps) {
   return (
     <input
+      autoFocus
       type="text"
       value={toDo}
       onChange={({ target: { value } }) => setToDo(value)}
