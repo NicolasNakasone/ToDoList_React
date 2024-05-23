@@ -21,10 +21,10 @@ export default function App() {
   }, [todos]);
 
   return (
-    <main>
+    <>
       <h1>ToDoList React</h1>
       <ToDoForm {...{ setTodos }} />
       <ToDoList {...{ todos, setTodos }} />
-    </main>
+    </>
   );
 }
